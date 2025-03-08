@@ -260,7 +260,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen p-2 pb-10 gap-8 sm:p-8 font-[family-name:var(--font-geist-sans)]">
       <h1 className="text-2xl text-center font-bold">
-        Serie 081 - Regsitro de Camisetas
+        Serie 081 - Registro de Camisetas
       </h1>
       <p className="text-center text-xl">
         {players?.length} Jugadores registrado
