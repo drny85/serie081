@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Serie 081",
-  description: "Rio San Juan, serie 081, sofball team 2025",
+  description: "Rio San Juan, Serie 081, softball Team 2025",
 };
 
 export default function RootLayout({
