@@ -1,10 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useMutation, useQuery } from "convex/react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -30,17 +35,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Pencil, Trash2 } from "lucide-react";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation, useQuery } from "convex/react";
+import { Pencil, RotateCw, Trash2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 // Define the schema for player information
 const playerSchema = z.object({
@@ -88,9 +88,9 @@ const getPositionShortName = (position: string): string => {
 };
 
 // Add these imports at the top
-import { ArrowUpDown } from "lucide-react";
 import { api } from "@/convex/_generated/api";
 import { Doc, Id } from "@/convex/_generated/dataModel";
+import { ArrowUpDown } from "lucide-react";
 import { toast } from "sonner";
 
 // Add these types after the PlayerFormData type
@@ -265,6 +265,13 @@ export default function Home() {
       <p className="text-center text-xl">
         {players?.length} Jugadores registrado
       </p>
+      <div className="md:hidden flex items-center gap-1 justify-center">
+        <p className="text-center italic">
+          Rotar el telefono horizontal para ver mas
+        </p>
+
+        <RotateCw />
+      </div>
       <div className="w-full max-w-4xl mx-auto">
         {/* Table Section */}
         <div className="bg-white p-6 rounded-lg shadow-md">
