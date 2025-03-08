@@ -203,7 +203,9 @@ export default function Home() {
       );
 
       if (isDuplicate) {
-        setDuplicateError(`Jersey number ${data.number} is already taken.`);
+        setDuplicateError(
+          `Jersey ${data.number} ya esta tomado.\n Preguntar si quiere intercambiar`
+        );
         return;
       }
       console.log("Updating player", playerToEditId, data);
@@ -256,12 +258,14 @@ export default function Home() {
   }, [isDialogOpen, form]);
 
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <h1 className="text-3xl text-center font-bold">
+    <div className="flex flex-col min-h-screen p-2 pb-10 gap-8 sm:p-8 font-[family-name:var(--font-geist-sans)]">
+      <h1 className="text-2xl text-center font-bold">
         Serie 081 - Regsitro de Camisetas
       </h1>
-
-      <div className="w-full max-w-6xl mx-auto">
+      <p className="text-center text-xl">
+        {players?.length} Jugadores registrado
+      </p>
+      <div className="w-full max-w-4xl mx-auto">
         {/* Table Section */}
         <div className="bg-white p-6 rounded-lg shadow-md">
           <div className="flex justify-between items-center mb-6">
